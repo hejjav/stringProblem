@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class tstClass {
+
+	StrReplace sobj = new StrReplace();
+	@Test
+	public void tstPositive(){
+		String s = sobj.replaceChar("transformers",'e');
+		Assert.assertEquals(s, "transformrs");
+	}
+	
+	@Test
+	public void tstNeg(){
+		String s = sobj.replaceChar("transformers",'r');
+		Assert.assertEquals(s, "tansfomes");
+		
+	}
+	
+	@Test
+	public void tstNeg1(){
+		String s = sobj.replaceChar("transformers",'x');
+		Assert.assertEquals(s, "transformers");
+	}
+	
+	@Test
+	public void tst1(){
+		String s = sobj.replaceChar("1234",'1');
+		Assert.assertEquals(s, "234");
+	}
+	
+	@Test
+	public void tstN(){
+		String s = sobj.replaceChar("t",'t');
+		Assert.assertEquals(s, "");
+	}
+	
+	@Test
+	public void tstN1(){
+		String s = sobj.replaceChar("Trance",'t');
+		Assert.assertEquals(s, "Trance");
+		
+	}
+	
+}
