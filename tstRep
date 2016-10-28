@@ -1,0 +1,54 @@
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+//Test class to test the method repString
+public class tstRep {
+
+	StrReplace sobj = new StrReplace();
+	@Test
+	public void tstPositive(){
+		String s = sobj.repString("transformers","e");
+		Assert.assertEquals(s, "transformrs");
+	}
+	
+	@Test
+	public void tstNeg(){
+		String s = sobj.repString("transformers","r");
+		Assert.assertEquals(s, "tansfomes");
+		
+	}
+	
+	@Test
+	public void tstNeg1(){
+		String s = sobj.repString("transformers","x");
+		Assert.assertEquals(s, "transformers");
+	}
+	
+	@Test
+	public void tst1(){
+		String s = sobj.repString("1234","1");
+		Assert.assertEquals(s, "234");
+	}
+	
+	@Test
+	public void tstN(){
+		String s = sobj.repString("t","t");
+		Assert.assertEquals(s, "");
+	}
+	
+	@Test
+	//Case sensitive, so this method doesnot remove the capital T
+	public void tstN1(){
+		String s = sobj.repString("Trance","t");
+		Assert.assertEquals(s, "rance");
+		
+	}
+	
+	@Test
+	public void tstP(){
+		String s = sobj.repString("the systems!","!");
+		Assert.assertEquals(s, "the systems");
+		
+	}
+	
+}
