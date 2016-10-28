@@ -37,6 +37,7 @@ public class tstClass {
 		Assert.assertEquals(s, "");
 	}
 	
+	//Negative test case - doesnot work for capital T (ignore case not implemented in replaceChar method)
 	@Test
 	public void tstN1(){
 		String s = sobj.replaceChar("Trance",'t');
