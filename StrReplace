@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class StrReplace {
+	
+//Method to replace all characters in a string
+
+	public  String replaceChar(String tstString,char c)
+	{
+		char[] tstArray = tstString.toCharArray();
+		char[] result= new char[tstArray.length];
+		int i=0;
+		for(int j=0;j<=tstArray.length-1; j++){
+			
+			if(tstArray[j] == c)
+			{
+				
+				tstArray[j]='\0';
+			}
+			else
+			{
+				result[i++]=tstArray[j];
+			
+			}
+				
+}
+		
+		String res= new String(result);
+		return res.trim();
+	}
+	
+	
+	
+}
